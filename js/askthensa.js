@@ -6,7 +6,7 @@ var ascii = {
 }
 var letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var letter_index = 0;
-var MAX_CHARACTERS = 7500;
+var MAX_CHARACTERS = 10000;
 
 var trackOptimizely = function(ev) {
     window['optimizely'] = window['optimizely'] || [];
@@ -199,5 +199,3 @@ setInterval(function() {
     curAgency++;
     if (curAgency == agencies.length) curAgency = 0;
 }, 500);
-
-show_modal();
