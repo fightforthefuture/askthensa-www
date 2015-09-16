@@ -130,8 +130,9 @@ var submit_form = function(e) {
     //var post_url = 'http://www.nsa.gov/applications/forms/foiaemail.cfm';     // JL NOTE ~ doesn't work (XSS protection)
     //var post_url = '/bury/submit';
     //var post_url = 'http://debbie:3019/submit';
-    var post_url = 'http://metacube:9000/foia';
-   // var post_url = 'https://queue.fightforthefuture.org/foia';
+    //var post_url = 'http://metacube:9000/foia';
+    //var post_url = 'https://queue.fightforthefuture.org/foia';
+    var post_url = 'https://www.faxbigbrother.com/foia';
 
     $.ajax(post_url, {
         type: 'POST',
