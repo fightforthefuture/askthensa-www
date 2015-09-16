@@ -6,7 +6,7 @@ var ascii = {
 }
 var letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var letter_index = 0;
-var MAX_CHARACTERS = 15000;
+var MAX_CHARACTERS = 7500;
 
 var trackOptimizely = function(ev) {
     window['optimizely'] = window['optimizely'] || [];
@@ -159,9 +159,9 @@ var submit_form = function(e) {
         },
         complete: function(xhr, status) {
             console.log('DONE SUBMIT FOIA! Status: ', status);
-            show_modal();
         }
     });
+    show_modal();
 }
 
 var val_err = function(field, message)
@@ -199,3 +199,5 @@ setInterval(function() {
     curAgency++;
     if (curAgency == agencies.length) curAgency = 0;
 }, 500);
+
+show_modal();
