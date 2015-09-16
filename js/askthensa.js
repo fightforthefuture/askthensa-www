@@ -6,7 +6,7 @@ var ascii = {
 }
 var letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var letter_index = 0;
-var MAX_CHARACTERS = 6000;
+var MAX_CHARACTERS = 15000;
 
 var trackOptimizely = function(ev) {
     window['optimizely'] = window['optimizely'] || [];
@@ -130,8 +130,8 @@ var submit_form = function(e) {
     //var post_url = 'http://www.nsa.gov/applications/forms/foiaemail.cfm';     // JL NOTE ~ doesn't work (XSS protection)
     //var post_url = '/bury/submit';
     //var post_url = 'http://debbie:3019/submit';
-    //var post_url = 'http://debbie:9001/foia';
-    var post_url = 'https://queue.fightforthefuture.org/foia';
+    var post_url = 'http://metacube:9000/foia';
+   // var post_url = 'https://queue.fightforthefuture.org/foia';
 
     $.ajax(post_url, {
         type: 'POST',
@@ -188,3 +188,13 @@ var hide_modal = function()
     $('#share_modal').addClass('invisible');
     window.setTimeout(function() {$('#share_modal').hide(); }, 1000);
 }
+
+var agencies = ['NSA', 'FBI', 'DEA'];
+var curAgency = 0;
+
+setInterval(function() {
+    document.querySelector('h1 span').textContent = agencies[curAgency];
+
+    curAgency++;
+    if (curAgency == agencies.length) curAgency = 0;
+}, 500);
